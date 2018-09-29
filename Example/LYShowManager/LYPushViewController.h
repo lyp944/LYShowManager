@@ -1,5 +1,5 @@
 //
-//  LYViewController.h
+//  LYPushViewController.h
 //  LYShowManager_Example
 //
 //  Created by Mega on 2018/9/29.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface LYViewController : UIViewController
+@interface LYPushViewController : UINavigationController
 
 @end
 
