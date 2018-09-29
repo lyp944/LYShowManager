@@ -19,11 +19,51 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'LYShowManager'
 ```
+## Usage
 
+```
+	LYDemoViewController *vc0 = [[LYDemoViewController alloc]init];
+	vc0.view.backgroundColor = [UIColor greenColor];
+	
+	LYDemoViewController *vc1 = [[LYDemoViewController alloc]init];
+	vc1.view.backgroundColor = [UIColor orangeColor];
+	
+	
+	[LYShowManager sharedManager].queueArray = @[vc0,vc1].mutableCopy;
+	
+	//push
+	[[LYShowManager sharedManager]configWithController:self actionBlock:^(UIViewController *root, UIViewController *previousViewController, UIViewController *currentViewController) {
+		
+		NSLog(@"action:\n%@ %@ %@",root,previousViewController,currentViewController);
+		//展示 code
+		[root presentViewController:currentViewController animated:YES completion:nil];
+		
+	} unactionBlock:^(UIViewController *root, UIViewController *previousViewController, UIViewController *currentViewController) {
+		
+		NSLog(@"unaction:\n%@ %@ %@",root,previousViewController,currentViewController);
+		
+		//消失 code
+		[previousViewController dismissViewControllerAnimated:YES completion:nil];
+		
+		
+	}quitBlock:^(UIViewController * _Nonnull root, UIViewController * _Nonnull previousViewController) {
+		NSLog(@"quit:\n%@ %@",root,previousViewController);
+		
+		//LYShowManager 结束了
+		[previousViewController dismissViewControllerAnimated:YES completion:nil];
+		
+		
+	}];
+	
+	
+	[[LYShowManager sharedManager]startShow];
+```
 ## Author
 
-Liyunbpeng, lypwork@sina.com
+Liyunpeng, lypworkon@sina.com
 
 ## License
 
 LYShowManager is available under the MIT license. See the LICENSE file for more info.
+
+
