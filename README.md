@@ -22,7 +22,7 @@ pod 'LYShowManager'
 
 ## Author
 
-Mega, yunpeng.li@sdbean.com
+Liyunbpeng, lypwork@sina.com
 
 ## License
 
