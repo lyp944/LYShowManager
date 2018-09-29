@@ -24,7 +24,7 @@ Pod::Spec.new do |s|
   s.homepage         = 'https://github.com/lyp944/LYShowManager'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'Mega' => 'yunpeng.li@sdbean.com' }
+  s.author           = { 'Liyunpeng' => 'lypworkon@sina.com' }
   s.source           = { :git => 'https://github.com/lyp944/LYShowManager.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
